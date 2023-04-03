@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "5d3cbc83-2b59-4670-82eb-719e42e29ccf",
+		"name": "ServiceNow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ex1",
+			"_postman_id": "4684aedd-68f1-4d3e-ad8d-0b7901f76124",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  countries {\r\n    code\r\n    name\r\n    emoji\r\n  }\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"graphql": {}
+					}
+				},
+				"url": "https://countries.trevorblades.com"
+			},
+			"response": []
+		},
+		{
+			"name": "Sysid generation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4923e37b-b9b5-41e7-bedf-f8680ed8c943",
+						"exec": [
+							"Resp = pm.response.json();\r",
+							"pm.globals.set(\"SYS_ID\", Resp.result.sys_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "0334fa66-9b05-4480-b7c7-6bf0f9a09a9e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Windows box - 192.168.1.2 is not working\",\r\n    \"description\": \"After the recent windows patch installation, my windows box is not restarting.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dev78818.service-now.com/api/now/table/incident"
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54c2cf76-2401-40f7-9414-8e81dc6d873f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "6accf873-b20a-4896-9b17-ad716dcbe42b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://dev78818.service-now.com/api/now/table/incident/{{SYS_ID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"_postman_id": "907adc69-f2b7-4cdd-964b-ec45465ea720",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "https://dev78818.service-now.com/api/now/table/incident/{{SYS_ID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"_postman_id": "ec17fbb5-8e4f-489a-affb-eee42ee1b199",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://dev78818.service-now.com/api/now/table/incident/{{SYS_ID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH",
+			"_postman_id": "e0aa73bb-fcd6-42d3-8eb8-83e7575d2356",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": "https://dev78818.service-now.com/api/now/table/incident/{{SYS_ID}}"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"username": "admin",
+			"password": "rbw+!aZGT5Q0"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f6a89b69-64ae-44a3-ad14-dc902b47914b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "02793d5d-1c0b-4e7c-ac0e-92439338982c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "77f0ff13-02c0-434a-aa99-96647130db3a",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
