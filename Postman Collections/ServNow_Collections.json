@@ -7,7 +7,19 @@
 	"item": [
 		{
 			"name": "Ex1",
-			"_postman_id": "4684aedd-68f1-4d3e-ad8d-0b7901f76124",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3de7476a-5d7b-40f7-a010-cb53a50f6c02",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4684aedd-68f1-4d3e-ad8d-0b7901f76124",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -25,9 +37,6 @@
 					"graphql": {
 						"query": "{\r\n  countries {\r\n    code\r\n    name\r\n    emoji\r\n  }\r\n}",
 						"variables": ""
-					},
-					"options": {
-						"graphql": {}
 					}
 				},
 				"url": "https://countries.trevorblades.com"
@@ -49,7 +58,7 @@
 					}
 				}
 			],
-			"_postman_id": "0334fa66-9b05-4480-b7c7-6bf0f9a09a9e",
+			"id": "0334fa66-9b05-4480-b7c7-6bf0f9a09a9e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -83,7 +92,7 @@
 					}
 				}
 			],
-			"_postman_id": "6accf873-b20a-4896-9b17-ad716dcbe42b",
+			"id": "6accf873-b20a-4896-9b17-ad716dcbe42b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -96,7 +105,7 @@
 		},
 		{
 			"name": "PUT",
-			"_postman_id": "907adc69-f2b7-4cdd-964b-ec45465ea720",
+			"id": "907adc69-f2b7-4cdd-964b-ec45465ea720",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -109,7 +118,7 @@
 		},
 		{
 			"name": "DELETE",
-			"_postman_id": "ec17fbb5-8e4f-489a-affb-eee42ee1b199",
+			"id": "ec17fbb5-8e4f-489a-affb-eee42ee1b199",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -122,7 +131,7 @@
 		},
 		{
 			"name": "PATCH",
-			"_postman_id": "e0aa73bb-fcd6-42d3-8eb8-83e7575d2356",
+			"id": "e0aa73bb-fcd6-42d3-8eb8-83e7575d2356",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -165,7 +174,7 @@
 	],
 	"variable": [
 		{
-			"id": "77f0ff13-02c0-434a-aa99-96647130db3a",
+			"id": "347fc44b-c82d-499f-9db2-56fec7543429",
 			"value": "",
 			"type": "string",
 			"disabled": true
