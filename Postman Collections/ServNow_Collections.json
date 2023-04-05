@@ -79,6 +79,41 @@
 			"response": []
 		},
 		{
+			"name": "Oauth -  Through Servicenow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4923e37b-b9b5-41e7-bedf-f8680ed8c943",
+						"exec": [
+							"Resp = pm.response.json();\r",
+							"pm.globals.set(\"SYS_ID\", Resp.result.sys_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "33fc49df-5fbf-43c1-8bbf-89caf5024d8d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Windows box - 192.168.1.2 is not working\",\r\n    \"description\": \"After the recent windows patch installation, my windows box is not restarting.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dev78818.service-now.com/api/now/table/incident"
+			},
+			"response": []
+		},
+		{
 			"name": "GET",
 			"event": [
 				{
@@ -174,7 +209,7 @@
 	],
 	"variable": [
 		{
-			"id": "347fc44b-c82d-499f-9db2-56fec7543429",
+			"id": "52523511-8345-4234-9fdd-7ef496d0eadf",
 			"value": "",
 			"type": "string",
 			"disabled": true
