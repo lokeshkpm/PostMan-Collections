@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "fe724c32-b3fc-4ea1-b322-88dcfbbb54be",
+		"name": "JIRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24744688"
+	},
+	"item": [
+		{
+			"name": "Create Issue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n    \"project\":\r\n                {\r\n                    \"key\": \"PROJ\"\r\n                },\r\n    \"summary\": \"create issue in RA project\",\r\n    \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n    \"issuetype\": {\r\n                    \"name\": \"Bug\"\r\n                }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issue/",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Issue using ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expand\": \"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations\",\r\n    \"id\": \"10843\",\r\n    \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/10843\",\r\n    \"key\": \"PROJ\",\r\n    \"fields\": {\r\n        \"statuscategorychangedate\": \"2020-05-11T11:12:10.603+0530\",\r\n        \"issuetype\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issuetype/10005\",\r\n            \"id\": \"10005\",\r\n            \"description\": \"A problem or error.\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/secure/viewavatar?size=medium&avatarId=10303&avatarType=issuetype\",\r\n            \"name\": \"Bug\",\r\n            \"subtask\": false,\r\n            \"avatarId\": 10303\r\n        },\r\n        \"timespent\": null,\r\n        \"project\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/project/10001\",\r\n            \"id\": \"10001\",\r\n            \"key\": \"RA\",\r\n            \"name\": \"MAY\",\r\n            \"projectTypeKey\": \"software\",\r\n            \"simplified\": false,\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://api-training.atlassian.net/secure/projectavatar?pid=10001&avatarId=10410\",\r\n                \"24x24\": \"https://api-training.atlassian.net/secure/projectavatar?size=small&s=small&pid=10001&avatarId=10410\",\r\n                \"16x16\": \"https://api-training.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10001&avatarId=10410\",\r\n                \"32x32\": \"https://api-training.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10001&avatarId=10410\"\r\n            }\r\n        },\r\n        \"fixVersions\": [],\r\n        \"aggregatetimespent\": null,\r\n        \"resolution\": null,\r\n        \"resolutiondate\": null,\r\n        \"workratio\": -1,\r\n        \"lastViewed\": null,\r\n        \"watches\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/MAY-32/watchers\",\r\n            \"watchCount\": 1,\r\n            \"isWatching\": true\r\n        },\r\n        \"created\": \"2020-05-11T11:12:10.355+0530\",\r\n        \"customfield_10020\": null,\r\n        \"customfield_10021\": null,\r\n        \"customfield_10022\": null,\r\n        \"customfield_10023\": null,\r\n        \"priority\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/priority/3\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/images/icons/priorities/medium.svg\",\r\n            \"name\": \"Medium\",\r\n            \"id\": \"3\"\r\n        },\r\n        \"labels\": [],\r\n        \"customfield_10016\": null,\r\n        \"customfield_10017\": null,\r\n        \"customfield_10018\": {\r\n            \"hasEpicLinkFieldDependency\": false,\r\n            \"showField\": false,\r\n            \"nonEditableReason\": {\r\n                \"reason\": \"PLUGIN_LICENSE_ERROR\",\r\n                \"message\": \"The Parent Link is only available to Jira Premium users.\"\r\n            }\r\n        },\r\n        \"customfield_10019\": \"0|i0049j:\",\r\n        \"aggregatetimeoriginalestimate\": null,\r\n        \"timeestimate\": null,\r\n        \"versions\": [],\r\n        \"issuelinks\": [],\r\n        \"assignee\": null,\r\n        \"updated\": \"2020-05-11T11:12:10.355+0530\",\r\n        \"status\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/status/10000\",\r\n            \"description\": \"\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/\",\r\n            \"name\": \"To Do\",\r\n            \"id\": \"10000\",\r\n            \"statusCategory\": {\r\n                \"self\": \"https://api-training.atlassian.net/rest/api/2/statuscategory/2\",\r\n                \"id\": 2,\r\n                \"key\": \"new\",\r\n                \"colorName\": \"blue-gray\",\r\n                \"name\": \"To Do\"\r\n            }\r\n        },\r\n        \"components\": [],\r\n        \"timeoriginalestimate\": null,\r\n        \"description\": \"Improvement creation USing REST API\",\r\n        \"customfield_10010\": null,\r\n        \"customfield_10014\": null,\r\n        \"timetracking\": {},\r\n        \"customfield_10015\": null,\r\n        \"customfield_10005\": null,\r\n        \"customfield_10006\": null,\r\n        \"security\": null,\r\n        \"customfield_10007\": null,\r\n        \"customfield_10008\": null,\r\n        \"aggregatetimeestimate\": null,\r\n        \"attachment\": [],\r\n        \"customfield_10009\": null,\r\n        \"summayy\": \"New Improvement\",\r\n        \"creator\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/user?accountId=5e85e557caa47a0c199f7c37\",\r\n            \"accountId\": \"5e85e557caa47a0c199f7c37\",\r\n            \"emailAddress\": \"rajalakshmi.govindarajan@testleaf.com\",\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=48&s=48\",\r\n                \"24x24\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=24&s=24\",\r\n                \"16x16\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=16&s=16\",\r\n                \"32x32\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=32&s=32\"\r\n            },\r\n            \"displayName\": \"Raji\",\r\n            \"active\": true,\r\n            \"timeZone\": \"Asia/Calcutta\",\r\n            \"accountType\": \"atlassian\"\r\n        },\r\n        \"subtasks\": [],\r\n        \"reporter\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/user?accountId=5e85e557caa47a0c199f7c37\",\r\n            \"accountId\": \"5e85e557caa47a0c199f7c37\",\r\n            \"emailAddress\": \"rajalakshmi.govindarajan@testleaf.com\",\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=48&s=48\",\r\n                \"24x24\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=24&s=24\",\r\n                \"16x16\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=16&s=16\",\r\n                \"32x32\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=32&s=32\"\r\n            },\r\n            \"displayName\": \"Raji\",\r\n            \"active\": true,\r\n            \"timeZone\": \"Asia/Calcutta\",\r\n            \"accountType\": \"atlassian\"\r\n        },\r\n        \"aggregateprogress\": {\r\n            \"progress\": 0,\r\n            \"total\": 0\r\n        },\r\n        \"customfield_10000\": \"{}\",\r\n        \"customfield_10001\": null,\r\n        \"customfield_10002\": null,\r\n        \"customfield_10003\": null,\r\n        \"customfield_10004\": null,\r\n        \"environment\": null,\r\n        \"duedate\": null,\r\n        \"progress\": {\r\n            \"progress\": 0,\r\n            \"total\": 0\r\n        },\r\n        \"votes\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/MAY-32/votes\",\r\n            \"votes\": 0,\r\n            \"hasVoted\": false\r\n        },\r\n        \"comment\": {\r\n            \"comments\": [],\r\n            \"maxResults\": 0,\r\n            \"total\": 0,\r\n            \"startAt\": 0\r\n        },\r\n        \"worklog\": {\r\n            \"startAt\": 0,\r\n            \"maxResults\": 20,\r\n            \"total\": 0,\r\n            \"worklogs\": []\r\n        }\r\n    }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issue/10007",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"10007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Issue using KEY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expand\": \"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations\",\r\n    \"id\": \"10843\",\r\n    \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/10843\",\r\n    \"key\": \"PROJ\",\r\n    \"fields\": {\r\n        \"statuscategorychangedate\": \"2020-05-11T11:12:10.603+0530\",\r\n        \"issuetype\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issuetype/10005\",\r\n            \"id\": \"10005\",\r\n            \"description\": \"A problem or error.\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/secure/viewavatar?size=medium&avatarId=10303&avatarType=issuetype\",\r\n            \"name\": \"Bug\",\r\n            \"subtask\": false,\r\n            \"avatarId\": 10303\r\n        },\r\n        \"timespent\": null,\r\n        \"project\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/project/10001\",\r\n            \"id\": \"10001\",\r\n            \"key\": \"RA\",\r\n            \"name\": \"MAY\",\r\n            \"projectTypeKey\": \"software\",\r\n            \"simplified\": false,\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://api-training.atlassian.net/secure/projectavatar?pid=10001&avatarId=10410\",\r\n                \"24x24\": \"https://api-training.atlassian.net/secure/projectavatar?size=small&s=small&pid=10001&avatarId=10410\",\r\n                \"16x16\": \"https://api-training.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10001&avatarId=10410\",\r\n                \"32x32\": \"https://api-training.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10001&avatarId=10410\"\r\n            }\r\n        },\r\n        \"fixVersions\": [],\r\n        \"aggregatetimespent\": null,\r\n        \"resolution\": null,\r\n        \"resolutiondate\": null,\r\n        \"workratio\": -1,\r\n        \"lastViewed\": null,\r\n        \"watches\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/MAY-32/watchers\",\r\n            \"watchCount\": 1,\r\n            \"isWatching\": true\r\n        },\r\n        \"created\": \"2020-05-11T11:12:10.355+0530\",\r\n        \"customfield_10020\": null,\r\n        \"customfield_10021\": null,\r\n        \"customfield_10022\": null,\r\n        \"customfield_10023\": null,\r\n        \"priority\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/priority/3\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/images/icons/priorities/medium.svg\",\r\n            \"name\": \"Medium\",\r\n            \"id\": \"3\"\r\n        },\r\n        \"labels\": [],\r\n        \"customfield_10016\": null,\r\n        \"customfield_10017\": null,\r\n        \"customfield_10018\": {\r\n            \"hasEpicLinkFieldDependency\": false,\r\n            \"showField\": false,\r\n            \"nonEditableReason\": {\r\n                \"reason\": \"PLUGIN_LICENSE_ERROR\",\r\n                \"message\": \"The Parent Link is only available to Jira Premium users.\"\r\n            }\r\n        },\r\n        \"customfield_10019\": \"0|i0049j:\",\r\n        \"aggregatetimeoriginalestimate\": null,\r\n        \"timeestimate\": null,\r\n        \"versions\": [],\r\n        \"issuelinks\": [],\r\n        \"assignee\": null,\r\n        \"updated\": \"2020-05-11T11:12:10.355+0530\",\r\n        \"status\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/status/10000\",\r\n            \"description\": \"\",\r\n            \"iconUrl\": \"https://api-training.atlassian.net/\",\r\n            \"name\": \"To Do\",\r\n            \"id\": \"10000\",\r\n            \"statusCategory\": {\r\n                \"self\": \"https://api-training.atlassian.net/rest/api/2/statuscategory/2\",\r\n                \"id\": 2,\r\n                \"key\": \"new\",\r\n                \"colorName\": \"blue-gray\",\r\n                \"name\": \"To Do\"\r\n            }\r\n        },\r\n        \"components\": [],\r\n        \"timeoriginalestimate\": null,\r\n        \"description\": \"Improvement creation USing REST API\",\r\n        \"customfield_10010\": null,\r\n        \"customfield_10014\": null,\r\n        \"timetracking\": {},\r\n        \"customfield_10015\": null,\r\n        \"customfield_10005\": null,\r\n        \"customfield_10006\": null,\r\n        \"security\": null,\r\n        \"customfield_10007\": null,\r\n        \"customfield_10008\": null,\r\n        \"aggregatetimeestimate\": null,\r\n        \"attachment\": [],\r\n        \"customfield_10009\": null,\r\n        \"summayy\": \"New Improvement\",\r\n        \"creator\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/user?accountId=5e85e557caa47a0c199f7c37\",\r\n            \"accountId\": \"5e85e557caa47a0c199f7c37\",\r\n            \"emailAddress\": \"rajalakshmi.govindarajan@testleaf.com\",\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=48&s=48\",\r\n                \"24x24\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=24&s=24\",\r\n                \"16x16\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=16&s=16\",\r\n                \"32x32\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=32&s=32\"\r\n            },\r\n            \"displayName\": \"Raji\",\r\n            \"active\": true,\r\n            \"timeZone\": \"Asia/Calcutta\",\r\n            \"accountType\": \"atlassian\"\r\n        },\r\n        \"subtasks\": [],\r\n        \"reporter\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/user?accountId=5e85e557caa47a0c199f7c37\",\r\n            \"accountId\": \"5e85e557caa47a0c199f7c37\",\r\n            \"emailAddress\": \"rajalakshmi.govindarajan@testleaf.com\",\r\n            \"avatarUrls\": {\r\n                \"48x48\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=48&s=48\",\r\n                \"24x24\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=24&s=24\",\r\n                \"16x16\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=16&s=16\",\r\n                \"32x32\": \"https://secure.gravatar.com/avatar/f565a725f1cc399943f607a9e664d3ce?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-5.png&size=32&s=32\"\r\n            },\r\n            \"displayName\": \"Raji\",\r\n            \"active\": true,\r\n            \"timeZone\": \"Asia/Calcutta\",\r\n            \"accountType\": \"atlassian\"\r\n        },\r\n        \"aggregateprogress\": {\r\n            \"progress\": 0,\r\n            \"total\": 0\r\n        },\r\n        \"customfield_10000\": \"{}\",\r\n        \"customfield_10001\": null,\r\n        \"customfield_10002\": null,\r\n        \"customfield_10003\": null,\r\n        \"customfield_10004\": null,\r\n        \"environment\": null,\r\n        \"duedate\": null,\r\n        \"progress\": {\r\n            \"progress\": 0,\r\n            \"total\": 0\r\n        },\r\n        \"votes\": {\r\n            \"self\": \"https://api-training.atlassian.net/rest/api/2/issue/MAY-32/votes\",\r\n            \"votes\": 0,\r\n            \"hasVoted\": false\r\n        },\r\n        \"comment\": {\r\n            \"comments\": [],\r\n            \"maxResults\": 0,\r\n            \"total\": 0,\r\n            \"startAt\": 0\r\n        },\r\n        \"worklog\": {\r\n            \"startAt\": 0,\r\n            \"maxResults\": 20,\r\n            \"total\": 0,\r\n            \"worklogs\": []\r\n        }\r\n    }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issue/PROJ-3",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"PROJ-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit  Issue",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n\r\n        \"description\": \"Bug creation Using REST API for testing\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issue/10008",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"10008"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete  Issue",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issue/PROJ-4",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"PROJ-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search all issues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/search?jql=project=\"{{projectName}}\"",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=\"{{projectName}}\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all issue Types",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"self\": \"https://api-training.atlassian.net/rest/api/2/issuetype/10004\",\r\n        \"id\": \"10004\",\r\n        \"description\": \"A new feature of the product, which has yet to be developed.\",\r\n        \"iconUrl\": \"https://api-training.atlassian.net/secure/viewavatar?size=medium&avatarId=10311&avatarType=issuetype\",\r\n        \"name\": \"New Feature\",\r\n        \"subtask\": false,\r\n        \"avatarId\": 10311\r\n    },\r\n    {\r\n        \"self\": \"https://api-training.atlassian.net/rest/api/2/issuetype/10001\",\r\n        \"id\": \"10001\",\r\n        \"description\": \"An improvement or enhancement to an existing feature or task.\",\r\n        \"iconUrl\": \"https://api-training.atlassian.net/secure/viewavatar?size=medium&avatarId=10310&avatarType=issuetype\",\r\n        \"name\": \"Improvement\",\r\n        \"subtask\": false,\r\n        \"avatarId\": 10310\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issuetype",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List the specific issue type",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"self\": \"https://api-training.atlassian.net/rest/api/2/issuetype/10004\",\r\n    \"id\": \"10004\",\r\n    \"description\": \"A new feature of the product, which has yet to be developed.\",\r\n    \"iconUrl\": \"https://api-training.atlassian.net/secure/viewavatar?size=medium&avatarId=10311&avatarType=issuetype\",\r\n    \"name\": \"New Feature\",\r\n    \"subtask\": false,\r\n    \"avatarId\": 10311\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lokeshkpm88.atlassian.net/rest/api/2/issuetype/10004",
+					"protocol": "https",
+					"host": [
+						"lokeshkpm88",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype",
+						"10004"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "ATATT3xFfGF03eXjEa65MQvZ8sBG4siITd3219K3wrZouVyeN6xR9zES3N2ubiba3hu1OvhUyNQfLYoQSh96-ueAo8NDXOgovKklsO9ch58Je7mnsCRUomvPuBLAvrbxTefY006fUzxDtND5fcgL6WpgpHFWI3Judog2Fiv_g_QUMEg1VK8NjjQ=F899B7A4",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "lokesh.kpm@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "projectName",
+			"value": "PROJECTMARCH"
+		}
+	]
+}
